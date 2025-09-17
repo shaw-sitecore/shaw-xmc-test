@@ -1,0 +1,12 @@
+{
+  "$schema": "../../.sitecore/schemas/ModuleFile.schema.json",
+  "namespace": "Project",
+  "items": {
+    "includes": [
+      {
+        "name": "Project",
+        "path": "/sitecore/content/home/"
+      }
+    ]
+  }
+}
