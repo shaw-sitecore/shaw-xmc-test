@@ -2,7 +2,7 @@ import { ComponentProps } from '@sitecore-feaas/clientside/react';
 import { File, FileField } from '@sitecore-jss/sitecore-jss-nextjs';
 
 interface Fields {
-  File: FileField;
+  PDF: FileField;
 }
 type PDFContainerProps = ComponentProps & {
   params: { [key: string]: string };
@@ -12,8 +12,8 @@ type PDFContainerProps = ComponentProps & {
 export default function PDFContainer(props: PDFContainerProps) {
   return (
     <div>
-      <File field={props.fields.File} target="_blank">
-        <h1>{props.fields.File.value.title}</h1>
+      <File field={props.fields.PDF} target="_blank">
+        <h1>{props.fields.PDF.value.title}</h1>
       </File>
     </div>
   );
