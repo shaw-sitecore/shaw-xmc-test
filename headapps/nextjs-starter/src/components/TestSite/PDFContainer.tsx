@@ -10,7 +10,9 @@ type PDFContainerProps = ComponentProps & {
 export default function PDFContainer(props: PDFContainerProps) {
   return (
     <div>
-      <File field={props.fields.file} target="_blank" />
+      <File field={props.fields.file} target="_blank">
+        <h1>{props.fields.file.value.title}</h1>
+      </File>
     </div>
   );
 }
