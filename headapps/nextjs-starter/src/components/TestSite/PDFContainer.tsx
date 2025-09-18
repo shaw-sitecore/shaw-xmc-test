@@ -13,7 +13,7 @@ export default function PDFContainer(props: PDFContainerProps) {
   return (
     <div>
       <File field={props.fields.PDF} target="_blank">
-        <h1>{props.fields.PDF.value.title}</h1>
+        <h1>PDF File</h1>
       </File>
     </div>
   );
