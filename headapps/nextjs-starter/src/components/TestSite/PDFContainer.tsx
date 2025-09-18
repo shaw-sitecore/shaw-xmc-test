@@ -12,7 +12,8 @@ type PDFContainerProps = ComponentProps & {
 export default function PDFContainer(props: PDFContainerProps) {
   return (
     <div>
-      <File field={props.fields.PDF} target="_blank">
+      // target="_blank" opens the file on a new tab. Remove to open the file on the current tab
+      <File field={props.fields.PDF}>
         <h1>{props.fields.PDF.value.src}</h1>
       </File>
     </div>
