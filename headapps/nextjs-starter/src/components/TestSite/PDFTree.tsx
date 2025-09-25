@@ -56,16 +56,19 @@ export interface DownloadItem {
 export default function PDFTree({ fields }: PDFTreeProps) {
   const url = fields.data?.datasource?.Downloads?.targetItems[0].url.url;
   return (
-    <Link
-      field={{
-        value: {
-          href: url,
-          target: '_blank',
-          rel: 'noopener noreferrer',
-        },
-      }}
-    >
-      <h1>PDFTree Link</h1>
-    </Link>
+    <div>
+      <h1>This is the PDF Tree component</h1>
+      <Link
+        field={{
+          value: {
+            href: url,
+            target: '_blank',
+            rel: 'noopener noreferrer',
+          },
+        }}
+      >
+        <h1>PDFTree Link</h1>
+      </Link>
+    </div>
   );
 }
