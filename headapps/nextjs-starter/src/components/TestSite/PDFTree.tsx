@@ -59,6 +59,12 @@ export default function PDFTree({ fields }: PDFTreeProps) {
   return (
     <div>
       <h1>This is the PDF Tree component</h1>
+      <h1>{`data: ${fields.data}`}</h1>
+      <h1>{`datasource: ${fields.data?.datasource}`}</h1>
+      <h1>{`PDFTree: ${fields.data?.datasource?.PDFTree}`}</h1>
+      <h1>{`targetItem: ${fields.data?.datasource?.PDFTree?.targetItems[0]}`}</h1>
+      <h1>{`url_1: ${fields.data?.datasource?.PDFTree?.targetItems[0].url}`}</h1>
+      <h1>{`url_2: ${fields.data?.datasource?.PDFTree?.targetItems[0].url.url}`}</h1>
       <Link href={`${url}`} target="_blank">
         <h2>PDFTree Link</h2>
       </Link>
