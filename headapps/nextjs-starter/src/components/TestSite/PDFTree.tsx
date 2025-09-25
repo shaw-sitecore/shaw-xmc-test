@@ -1,4 +1,5 @@
-import { Field, Link } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Field } from '@sitecore-jss/sitecore-jss-nextjs';
+import Link from 'next/link';
 
 interface PDFTreeProps {
   fields: {
@@ -58,16 +59,8 @@ export default function PDFTree({ fields }: PDFTreeProps) {
   return (
     <div>
       <h1>This is the PDF Tree component</h1>
-      <Link
-        field={{
-          value: {
-            href: url,
-            target: '_blank',
-            rel: 'noopener noreferrer',
-          },
-        }}
-      >
-        <h1>PDFTree Link</h1>
+      <Link href={`${url}`} target="_blank">
+        <h2>PDFTree Link</h2>
       </Link>
     </div>
   );
