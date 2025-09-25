@@ -65,7 +65,7 @@ export default function PDFTree({ fields }: PDFTreeProps) {
         },
       }}
     >
-      <h1>{url}</h1>
+      <h1>PDFTree Link</h1>
     </Link>
   );
 }
