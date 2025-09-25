@@ -54,7 +54,7 @@ export interface DownloadItem {
 }
 
 export default function PDFTree({ fields }: PDFTreeProps) {
-  let url = fields.data?.datasource?.Downloads?.targetItems[0].url.url;
+  const url = fields.data?.datasource?.Downloads?.targetItems[0].url.url;
   return (
     <Link
       field={{
