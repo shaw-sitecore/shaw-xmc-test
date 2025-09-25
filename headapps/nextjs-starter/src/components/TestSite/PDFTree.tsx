@@ -18,7 +18,7 @@ export interface DownloadLinksData {
   ShortDescription?: {
     jsonValue: Field<string>;
   };
-  Downloads?: {
+  PDFTree?: {
     targetItems: DownloadItem[];
   };
 }
@@ -55,7 +55,7 @@ export interface DownloadItem {
 }
 
 export default function PDFTree({ fields }: PDFTreeProps) {
-  const url = fields.data?.datasource?.Downloads?.targetItems[0].url.url;
+  const url = fields.data?.datasource?.PDFTree?.targetItems[0].url.url;
   return (
     <div>
       <h1>This is the PDF Tree component</h1>
