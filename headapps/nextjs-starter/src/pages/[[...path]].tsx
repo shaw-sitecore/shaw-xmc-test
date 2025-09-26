@@ -79,6 +79,10 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 // It may be called again, on a serverless function, if
 // revalidation (or fallback) is enabled and a new request comes in.
 export const getStaticProps: GetStaticProps = async (context) => {
+  return {
+    notFound: true,
+  };
+
   const props = await sitecorePagePropsFactory.create(context);
 
   props.layoutData.sitecore.context.storeName = 'Canny Store';
