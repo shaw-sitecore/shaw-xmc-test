@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Link,
-  LinkField,
-  Text,
-  TextField,
-  useSitecoreContext,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+import { Link, LinkField, Text, TextField, useSitecore } from '@sitecore-content-sdk/nextjs';
 
 interface Fields {
   Id: string;
@@ -25,7 +19,7 @@ type NavigationProps = {
   relativeLevel: number;
 };
 
-const getNavigationText = function (props: NavigationProps): JSX.Element | string {
+const getNavigationText = function (props: NavigationProps): React.JSX.Element | string {
   let text;
 
   if (props.fields.NavigationTitle) {
@@ -47,9 +41,9 @@ const getLinkField = (props: NavigationProps): LinkField => ({
   },
 });
 
-export const Default = (props: NavigationProps): JSX.Element => {
+export const Default = (props: NavigationProps): React.JSX.Element => {
   const [isOpenMenu, openMenu] = useState(false);
-  const { sitecoreContext } = useSitecoreContext();
+  const { page } = useSitecore();
   const styles =
     props.params != null
       ? `${props.params.GridParameters ?? ''} ${props.params.Styles ?? ''}`.trimEnd()
@@ -65,7 +59,7 @@ export const Default = (props: NavigationProps): JSX.Element => {
   }
 
   const handleToggleMenu = (event?: React.MouseEvent<HTMLElement>, flag?: boolean): void => {
-    if (event && sitecoreContext?.pageEditing) {
+    if (event && page?.mode.isEditing) {
       event.preventDefault();
     }
 
@@ -108,13 +102,13 @@ export const Default = (props: NavigationProps): JSX.Element => {
 };
 
 const NavigationList = (props: NavigationProps) => {
-  const { sitecoreContext } = useSitecoreContext();
+  const { page } = useSitecore();
   const [active, setActive] = useState(false);
   const classNameList = `${props.fields.Styles.concat('rel-level' + props.relativeLevel).join(
     ' '
   )}`;
 
-  let children: JSX.Element[] = [];
+  let children: React.JSX.Element[] = [];
   if (props.fields.Children && props.fields.Children.length) {
     children = props.fields.Children.map((element: Fields, index: number) => (
       <NavigationList
@@ -134,7 +128,7 @@ const NavigationList = (props: NavigationProps) => {
       >
         <Link
           field={getLinkField(props)}
-          editable={sitecoreContext.pageEditing}
+          editable={page.mode.isEditing}
           onClick={props.handleClick}
         >
           {getNavigationText(props)}

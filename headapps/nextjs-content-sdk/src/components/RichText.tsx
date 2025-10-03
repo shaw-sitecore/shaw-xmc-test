@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, RichText as JssRichText } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Field, RichText as JssRichText } from '@sitecore-content-sdk/nextjs';
 
 interface Fields {
   Text: Field<string>;
@@ -10,7 +10,7 @@ export type RichTextProps = {
   fields: Fields;
 };
 
-export const Default = (props: RichTextProps): JSX.Element => {
+export const Default = (props: RichTextProps): React.JSX.Element => {
   const text = props.fields ? (
     <JssRichText field={props.fields.Text} />
   ) : (
