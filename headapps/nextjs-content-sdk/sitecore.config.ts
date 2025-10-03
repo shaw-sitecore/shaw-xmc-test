@@ -15,9 +15,4 @@ export default defineConfig({
     enabled: false,
     useCookieResolution: () => process.env.VERCEL_ENV === 'preview',
   },
-  personalize: {
-    scope: process.env.NEXT_PUBLIC_PERSONALIZE_SCOPE,
-    edgeTimeout: parseInt(process.env.PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT!, 10),
-    cdpTimeout: parseInt(process.env.PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT!, 10),
-  },
 });
