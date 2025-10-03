@@ -17,7 +17,7 @@ export default defineConfig({
       edgeUrl: process.env.SITECORE_EDGE_URL || process.env.NEXT_PUBLIC_SITECORE_EDGE_URL,
     },
   },
-  defaultSite: process.env.NEXT_PUBLIC_DEFAULT_SITE_NAME,
+  defaultSite: process.env.SITECORE_EDITING_SECRET,
   defaultLanguage: process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE || 'en',
   editingSecret: process.env.SITECORE_EDITING_SECRET,
   redirects: {
